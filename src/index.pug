@@ -1,0 +1,493 @@
+extends pug/base
+
+prepend vars
+	//-
+
+append vars
+	- title = "TANUKI Family Франшиза"
+	- meta.description = "TANUKI Family Франшиза"
+
+block content
+	// Section Hero
+	section.section-hero.container
+		.section-hero__content
+			h1.heading1.section-hero__title Откройте ресторан и зарабатывайте от
+				|
+				|
+				span.section-hero__title-inderline 2 500 000
+				|
+				|
+				|₽
+				|
+				|
+				sup.text-red *
+			p.section-hero__text Франшиза ресторанов японской и паназиатской кухни с удобными локациями и круглосуточной доставкой
+			button.button.button--red.button--big.section-hero__btn(data-scroll-to="section-order") Оставить заявку
+			p.section-hero__note
+				span.text-red *
+				|
+				|
+				|Средний доход ресторана в месяц
+
+
+	// Section Why
+	section#section-why.section-why.container
+		.section-why__header
+			h2.section-why__title.heading2 Почему Тануки
+			p.section-why__text Тануки — один из самых узнаваемых брендов на рынке японской и паназиатской кухни. 72% посетителей* заведений общественного питания знают бренд Тануки.
+			p.section-why__note
+				sup *
+				|По данным Mediascope Russia за январь-август 2023 среди аудитории 25+
+		.section-why__grid
+			// Card
+			article.section-why__card
+				h3.section-why__card-title.heading3 85 ресторанов
+				p.section-why__card-text В 14 крупных городах России и зарубежья
+			// Card
+			article.section-why__card
+				h3.section-why__card-title.heading3 5 стран
+				p.section-why__card-text Россия, Казахстан, Узбекистан, ОАЭ, США
+			// Card
+			article.section-why__card
+				h3.section-why__card-title.heading3 >17 000 000
+				p.section-why__card-text Заказов в год делают наши гости
+			// Card
+			article.section-why__card
+				h3.section-why__card-title.heading3 >5 000 000
+				p.section-why__card-text Пользователей в
+					|
+					|
+					a.section-why__card-link(href="#", target="_blank", rel="noreferrer nofollow") Программе взаимности
+
+	// Section Photo
+	section.section-photo.container
+		h2.section-photo__title.heading2 Наши рестораны
+		.section-photo__grid
+			+picture("section-photo/img1")(class="section-photo__elem")
+			+picture("section-photo/img2")(class="section-photo__elem")
+			+picture("section-photo/img3")(class="section-photo__elem")
+			+picture("section-photo/img4")(class="section-photo__elem")
+
+
+	// Section Advantages
+	section.section-advantages
+		.container
+			h2.section-advantages__title.heading2 Преимущества франшизы Тануки
+			.section-advantages__grid
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Известный бренд
+					p.section-advantages__card-text Известный бренд японской и паназиатской кухни, ориентированный на высокое качество и популярный среди гостей.
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Бизнес модель
+					p.section-advantages__card-text Бизнес-модель проверена временем и доказала свою эффективность.
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Авторское меню
+					p.section-advantages__card-text Уникальное меню от Бренд шефа Тануки обновляется дважды в год + сезонные предложения.
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Поставщики
+					p.section-advantages__card-text Надежные поставщики c выгодными ценами, отлаженная система поставок.
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Надежная IT
+					p.section-advantages__card-text Удобная и надежная система управления рестораном. Служба поддержки 24/7.
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Эффективный маркетинг
+					p.section-advantages__card-text Сильная маркетинговая поддержка для каждого ресторана. Умеем привлекать гостей и увеличивать выручку.
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Обучение и развитие
+					p.section-advantages__card-text Программа обучения и развития для каждой должности. Доступ online. Регулярные стажировки и аттестации.
+				// Card
+				article.section-advantages__card
+					h4.section-advantages__card-title.heading4 Операционная поддержка
+					p.section-advantages__card-text Поддержка франчайзи на всех этапах сотрудничества, от поиска локации до операционного контроля за работой ресторана.
+			button.button.button--red.button--big.section-advantages__btn(data-scroll-to="section-order") Оставить заявку
+
+
+	// Section Process
+	mixin process-card(num, title, text)
+		// Card
+		.section-process__card.swiper-slide
+			span.section-process__card-num= num
+			h4.section-process__card-title= title
+			p.section-process__card-text= text
+	section.section-process.container
+		h2.section-process__title.heading2 Как мы работаем с франчайзи
+		.section-process__nav
+			button.section-process__nav-elem.section-process__nav-elem--active(data-slide="0") До открытия ресторана
+			button.section-process__nav-elem(data-slide="1") После открытия ресторана
+		.section-process__slider-box
+			.section-process__slider-nav
+				button.section-process__slider-btn.section-process__slider-btn--prev.slider-btn.slider-btn--prev
+					+svg("chevron-right")(class="slider-btn__icon")
+				button.section-process__slider-btn.section-process__slider-btn--next.slider-btn.slider-btn--next
+					+svg("chevron-right")(class="slider-btn__icon")
+			.swiper.section-process__slider
+				.swiper-wrapper
+					.swiper-slide.swiper
+						.swiper-wrapper.section-process__grid
+							+process-card("1", "Оценка рынка", "Оценим емкость рынка вашего города.Определим возможные выручки, потенциал доставки и составим программу развития.")
+							+process-card("2", "Выбор локации", "Совместно выберем подходящую локацию. Составим финансовую модель будущего ресторана. Оценим инвестиции. Проверим договор аренды.")
+							+process-card("3", "Проект ресторана", "Сделаем проект ресторана. Полный пакет: архитектурно-дизайнерские и инженерные проекты.")
+							+process-card("4", "Стройка", "Оценим сметы и поможем проконтролировать работу подрядчиков.")
+							+process-card("5", "Закупки", "Передадим контакты поставщиков и поможем провести тендеры. Проверим цены локальных поставщиков.")
+							+process-card("6", "Поиск персонала", "Подскажем как найти персонал и провести собеседования. Оценим кандидатов на ключевые позиции.")
+							+process-card("7", "Обучение", "Каждый сотрудник пройдет обучение и сдаст аттестацию. Обучение в онлайн и оффлайн формате.")
+							+process-card("8", "Реклама на открытие", "Сразу после подписания договора аренды начнем привлекать гостей в ваш ресторан. Составим программу открытия ресторана.")
+					.swiper-slide.swiper
+						.swiper-wrapper.section-process__grid
+							+process-card("1", "Контроль", "Регулярные аудиты и тайный покупатель подскажут, где происходит сбой в работе ресторана.")
+							+process-card("2", "Поддержка", "Наши операционные менеджеры помогут отладить работу ресторана и подскажут вашей команде, что нужно делать.")
+							+process-card("3", "Обучение", "Регулярное обучение и аттестация сотрудников. База знаний доступна каждому сотруднику в онлайн формате 24/7.")
+							+process-card("4", "Реклама", "Все рестораны участвуют в федеральной маркетинговой программе. Разработаем и поможем реализовать локальную кампанию.")
+							+process-card("5", "Прием заказов", "Подключим ресторан к сайту, Мобильному приложению, Контакт центру, Яндекс.Еде, Delivery Club и др.")
+							+process-card("6", "Доставка", "Менеджеры доставки организуют работу службы доставки. Проконтролируют доставку каждого заказа.")
+							+process-card("7", "Закупки", "Предоставим список поставщиков с выгодными ценами. Найдем локальных поставщиков и поможет заключить выгодные контракты.")
+							+process-card("8", "IT инструменты", "Удобная система отчетов позволяет контролировать работу ресторана, повышать эффективность управления.")
+
+	// Section Target
+	section#section-target.section-target.container
+		h2.section-target__title.heading2 Для кого подходит
+		.section-target__grid
+			// Card
+			.section-target__card
+				h4.section-target__card-title Предприниматель
+				p.section-target__card-text У вас есть действующий бизнес, вы опытный предприниматель и давно мечтали открыть свой ресторан - мы поможем реализовать вашу мечту.
+			// Card
+			.section-target__card
+				h4.section-target__card-title Собственник помещения
+				p.section-target__card-text У вас есть помещение расположенное в центре города или крупном жилом массиве с хорошим трафиком и вы ищите возможности увеличить свою прибыль - мы готовы предложить нашу франшизу.
+			// Card
+			.section-target__card
+				h4.section-target__card-title Инвестор
+				p.section-target__card-text Вы готовы инвестировать в реальный бизнес, но не готовы погружаться в операционные вопросы - у нас есть предложение для вас.
+			// Card
+			.section-target__card
+				h4.section-target__card-title Ресторатор
+				p.section-target__card-text У вас есть действующий ресторан и вы задумались о смене концепции - мы будем рады вам помочь.
+
+	// Section Map
+	section.section-map.container
+		h2.section-map__title.heading2 Карта действующих ресторанов
+		.section-map__map-box
+			+picture("section-map/map")(class="section-map__map")
+
+	// Section Cities
+	section#section-cities.section-cities.container
+		h2.section-cities__title.heading2 Мы ищем франчайзи в городах
+		.section-cities__grid
+			// Card
+			article.section-cities__card
+				+picture("section-cities/img1")(class="section-cities__card-img")
+				h3.section-cities__card-title Города-миллионеры
+					br
+					|России
+				p.section-cities__card-text В крупных городах мы готовы открывать 2-3 ресторана.
+				p.section-cities__card-list Красноярск, Новосибирск, Тюмень, Омск,  Челябинск, Пермь, Ростов-на-Дону, Волгоград.
+				button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Забронировать город
+			// Card
+			article.section-cities__card
+				+picture("section-cities/img2")(class="section-cities__card-img")
+				h3.section-cities__card-title Города с населением от 500 000 человек
+				p.section-cities__card-text В этих городах мы готовы открывать 1-2 ресторана. Один город - один франчайзи.
+				p.section-cities__card-list Саратов, Тюмень, Ижевск, Хабаровск, Иркутск, Владивосток, Ярославль, Оренбург, Кемерово и другие.
+				button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Забронировать город
+			// Card
+			article.section-cities__card
+				+picture("section-cities/img3")(class="section-cities__card-img")
+				h3.section-cities__card-title Предложите свой город
+				p.section-cities__card-text Не нашли свой город?
+					br
+					|Мы готовы открывать рестораны и в других городах, если это позволяют экономические факторы.
+				button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Предложить свой город
+
+
+	// Section Steps
+	mixin steps-card(num, title, text)
+			// Card
+			.section-steps__card.swiper-slide
+				span.section-steps__card-num= num
+				h4.section-steps__card-title= title
+				p.section-steps__card-text !{text}
+	section.section-steps
+		.container
+			h2.section-steps__title.heading2 Как начать сотрудничество
+			.section-steps__slider-box
+				.section-steps__slider-nav
+					button.section-steps__slider-btn.section-steps__slider-btn--prev.slider-btn.slider-btn--prev
+						+svg("chevron-right")(class="slider-btn__icon")
+					button.section-steps__slider-btn.section-steps__slider-btn--next.slider-btn.slider-btn--next
+						+svg("chevron-right")(class="slider-btn__icon")
+				.swiper.section-steps__slider
+					.swiper-wrapper
+						+steps-card("1", "Изучите бизнес-модель ресторана", "В модели вы найдете: экономику ресторана, инвестиции с расшифровкой, прогноз продаж, расчет окупаемости.")
+						+steps-card("2", "Ответим на ваши вопросы", "После изучения Бизнес-модели у вас возникнут вопросы. Мы с радостью ответим на них и расскажем о нашем бизнесе.")
+						+steps-card("3", "Оценим рынок", "Прежде чем принять решение об открытии ресторана Тануки в вашем городе, мы изучим рынок.")
+						+steps-card("4", "Подпишем предварительный договор", "За вами будет закреплена территория <span class='nobr'>и/или</span> город. В границах территории вы получите право открыть ресторан.")
+						+steps-card("5", "Поиск локации", "Расскажем, где искать подходящее помещение, как провести переговоры  с арендадателем, изучим договор.")
+						+steps-card("6", "Проектирование и строительство", "Наши архитекторы и инженеры подготовят полный пакет проектов. Проконтролируем работу ваших подрядчиков")
+						+steps-card("7", "Закупка оборудования и инвентаря", "Вместе с проектом вы получите спецификацию на оборудование и инвентарь. Поможем заключить договора с поставщиками и получить выгодные цены.")
+						+steps-card("8", "Поиск и найм персонала", "Наши консультанты окажут вам поддержку на этапе подбора персонала. Они проведут собеседования с кандидатами на ключевые позиции.")
+						+steps-card("9", "Обучение персонала", "Все сотрудники пройдут обучение в три этапа: онлайн обучение, стажировка в действующих ресторанах, аттестация.")
+						+steps-card("10", "Рекламная кампания", "Разработаем рекламную программу на открытие вашего ресторана поможем привлечь гостей. После открытия будем поддерживать вас.")
+						+steps-card("11", "Открытие ресторана", "Start-up команда поможет открыть ресторан. С вашей командой подготовят ресторан к открытию, проработают меню, проведут аттестацию и организуют работу персонала.")
+						+steps-card("12", "Сопровождение", "Первый год работы наши операционные менеджеры будут управлять рестораном. Далее ежемесячно будем контролировать работу, подсказывать и обучать.")
+			button.button.button--big.button--red.section-steps__btn(data-scroll-to="section-order") Получить консультацию
+
+	// Section Conditions
+	section#section-conditions.section-conditions.container
+		.section-conditions__grid
+			// Col
+			.section-conditions__col
+				h2.section-conditions__title.heading2 Условия сотрудничества
+				p.section-conditions__text Покупка франшизы — это возможность начать бизнес не имея опыта в выбранном направлении и с минимальным риском допустить ошибки.
+				.section-conditions__card-grid
+					// Card
+					.section-conditions__card
+						p.section-conditions__card-label Прибыль от
+						p.section-conditions__card-value 2 500 000 ₽
+							|
+							|
+							span.section-conditions__card-value-small / мес
+					// Card
+					.section-conditions__card
+						p.section-conditions__card-label Окупаемость
+						p.section-conditions__card-value от 30 месяцев
+					// Card
+					.section-conditions__card
+						p.section-conditions__card-label Инвестиции от
+						p.section-conditions__card-value 85 000 000 ₽
+					// Card
+					.section-conditions__card
+						p.section-conditions__card-label Паушальный взнос
+							|
+							|
+							sup.text-red *
+						p.section-conditions__card-value 6 000 000 ₽
+					// Card
+					.section-conditions__card
+						p.section-conditions__card-label Средний чек
+						p.section-conditions__card-value 2 370 ₽
+					// Card
+					.section-conditions__card
+						p.section-conditions__card-label Доля заказов на доставку
+						p.section-conditions__card-value 45%
+				p.section-conditions__note
+					span.text-red *
+					|
+					|
+					|Входит в инвестиции
+			// Col
+			.section-conditions__col
+				.section-conditions__panel-grid
+					// Panel
+					.section-conditions__panel.section-conditions__panel--violet
+						h3.section-conditions__panel-title Классический франчайзинг
+						p.section-conditions__panel-text
+							strong.section-conditions__panel-text-strong Вы
+							|
+							|
+							|— самостоятельно управляете своим рестораном, ориентируюсь на наши стандарты.
+						p.section-conditions__panel-text
+							strong.section-conditions__panel-text-strong Мы
+							|
+							|
+							|— помогаем вам на всех этапах открытия. Обучаем вас и ваших сотрудников. После открытия контролируем основные показатели работы ресторана. Подсказываем вам, где проблема и как её исправить.
+						button.button.button--red.button--small.section-conditions__panel-btn(data-scroll-to="section-order") Оставить заявку
+					// Panel
+					.section-conditions__panel.section-conditions__panel--beige
+						h3.section-conditions__panel-title Управленческая франшиза
+						p.section-conditions__panel-text
+							strong.section-conditions__panel-text-strong Вы
+							|
+							|
+							|— получаете полным отчет о деятельности ресторана и контролируете финансовые потоки.
+						p.section-conditions__panel-text
+							strong.section-conditions__panel-text-strong Мы
+							|
+							|
+							|— берем дополнительную плату за управление рестораном в размере 2% от выручки.
+						p.section-conditions__panel-note В отличие от классической франшизы рестораном управляет специально собранная команда опытных менеджеров под нашим руководством.
+						button.button.button--red.button--small.section-conditions__panel-btn(data-scroll-to="section-order") Оставить заявку
+
+	// Section Structure
+	section.section-structure.container
+		.section-structure__grid
+			// Col
+			.section-structure__col
+				h2.section-structure__title.heading2 Структура инвестиций
+				.section-structure__info
+					h4.section-structure__info-title Инвестиции по статьям расходов
+					ul.section-structure__info-list
+						-
+							var info = [
+								['Строительно-монтажные работы', '37,2%', '100'],
+								['Оборудование кухни', '10,6%', '47'],
+								['Мебель и оборудование зала', '8,2%', '39'],
+								['Вступительный взнос', '7,1%', '35'],
+								['Инвентарь', '6,5%', '32'],
+								['Декорирование и вывеска', '6,4%', '31'],
+								['Оснащение доставки', '6,3%', '31'],
+								['ИТ оборудование', '4,6%', '23'],
+								['Резерв', '4,6%', '23'],
+								['Прочие расходы', '4,6%', '23'],
+								['Расходы на открытие', '3,1%', '19'],
+								['Проект ресторана', '2,3%', '16'],
+								['Маркетинг', '1,9%', '14'],
+								['Аренда и депозит', '1,8%', '13'],
+							]
+						each el in info
+							// Elem
+							li.section-structure__info-elem
+								p.section-structure__info-elem-label= el[0]
+								.section-structure__info-elem-value-box
+									span.section-structure__info-elem-value(style=`width: ${el[2]}%`)= el[1]
+			// Col
+			.section-structure__col
+				.section-structure__col-title-box
+					h3.section-structure__col-title Что может снизить стоимость проекта:
+				.section-structure__card-grid
+					// Card
+					article.section-structure__card
+						p.section-structure__card-num 1
+						h4.section-structure__card-title Состояние помещения
+						p.section-structure__card-text Помещение требующее меньше переделок, отделки фасада, организации дополнительного входа.
+					// Card
+					article.section-structure__card
+						p.section-structure__card-num 2
+						h4.section-structure__card-title Достаточное количество электрической мощности
+						p.section-structure__card-text Сэкономите на подведение недостающей мощности.
+					// Card
+					article.section-structure__card
+						p.section-structure__card-num 3
+						h4.section-structure__card-title Наличие вентиляции
+						p.section-structure__card-text Действующая вентиляция потребует ревизии и оценки и скорее всего переделки. Но также может снизить затраты.
+					// Card
+					article.section-structure__card
+						p.section-structure__card-num 4
+						h4.section-structure__card-title Арендные каникулы
+						p.section-structure__card-text Если на этапе переговоров с Арендодателем добиться каникул на весь срок ремонта помещения (3-4 мес), то не придется платить аренду на этапе строительства
+		// Bottom
+		.section-structure__bottom
+			h3.section-structure__bottom-title Чтобы узнать, как еще можно снизить стоимость проекта, скачайте требования к помещению
+			a.button.button--big.button--black.section-structure__bottom-btn(href="#", download) Скачать
+
+	// Section Order
+	section#section-order.section-order.container
+		.section-order__grid
+			h2.heading2.section-order__title Оставьте заявку и мы перезвоним вам
+			form.section-order__form(action="#")
+				.form-group
+					input.form-group__input#name(type="text", name="name", placeholder=" ", required)
+					label.form-group__label(for="name") ФИО
+				.form-group
+					input.form-group__input#city(type="text", name="city", placeholder=" ", required)
+					label.form-group__label(for="city") Город, в котором вы рассматриваете открытие ресторана
+				.form-group
+					input.form-group__input#phone(type="tel", name="phone", placeholder=" ", required)
+					label.form-group__label(for="phone") Телефон для связи
+				.form-group
+					input.form-group__input#email(type="email", name="email", placeholder=" ")
+					label.form-group__label(for="email") E-mail
+				button.button.button--big.button--red.section-order__submit(type="submit") Получить консультацию
+				p.section-order__note Отправляя сообщение, вы принимаете условия соглашения об использовании сайта, в том числе в части обработки и использования персональных данных
+
+	// Section Faq
+	section#section-faq.section-faq.container
+		h2.section-faq__title.heading2 Вопросы и ответы
+		.section-faq__grid
+			// Col
+			.section-faq__col
+				.section-faq__list
+					// Block
+					.section-faq__block.section-faq__block--active
+						.section-faq__block-title-box
+							h4.section-faq__block-title Помогаете ли вы найти помещение для ресторана?
+							+svg("chevron-right")(class="section-faq__block-icon")
+						.section-faq__block-content
+							p.section-faq__block-text Помещение под будущий ресторан мы будем выбирать вместе. Если вы обладаете опытом и хорошо ориентируетесь в рынке недвижимости своего города, то достаточно будет ознакомиться с нашими рекомендациями и требованиям к помещению. В рамках услуги "управленческая франшиза" эту работу мы сделаем за вас. 
+							p.section-faq__block-text В любом случае, пока мы не согласуем выбранную локацию, вы не должны заключать договор аренды.
+					// Block
+					.section-faq__block
+						.section-faq__block-title-box
+							h4.section-faq__block-title Кто проектирует ресторан?
+							+svg("chevron-right")(class="section-faq__block-icon")
+						.section-faq__block-content
+							p.section-faq__block-text Проект ресторана делают сертифицированные проектировщики и инженеры. Они готовят полный пакет проектов архитектурно-дизайнерских и инженерных. Этого пакета достаточно для строительства ресторана и его согласования с арендодателем и другими службами. Полный состав проектов вы можете узнать, оставив заявку ниже.
+					// Block
+					.section-faq__block
+						.section-faq__block-title-box
+							h4.section-faq__block-title Кто строит ресторан? Где найти подрядчика?
+							+svg("chevron-right")(class="section-faq__block-icon")
+						.section-faq__block-content
+							p.section-faq__block-text Подрядные организации необходимо найти в вашем городе. Наши специалисты помогут вам оценить их опыт и квалификацию, изучат договор и смету. Если подрядная организация имеет опыт застройки аналогичных объектов, то ей не составит труда построить ресторан ориентируясь на проекты. Наши специалисты будут контролировать этапы строительства, включая выездные проверки.
+					// Block
+					.section-faq__block
+						.section-faq__block-title-box
+							h4.section-faq__block-title Где купить оборудование и инвентарь?
+							+svg("chevron-right")(class="section-faq__block-icon")
+						.section-faq__block-content
+							p.section-faq__block-text Одновременно с технологическим проектом ресторана предоставляется спецификация на оборудование и инвентарь. Мы не используем сложное и дорогостоящее оборудование. Список поставщиков также будет предоставлен вам. Вы сможете самостоятельно заключить договоры поставки. Специалисты коммерческого отдела помогут получить от поставщиков выгодные условия. В настоящее время при покупке оборудования необходимо учитывать не только цену, но и сроки поставки.
+					// Block
+					.section-faq__block
+						.section-faq__block-title-box
+							h4.section-faq__block-title Как найти персонал?
+							+svg("chevron-right")(class="section-faq__block-icon")
+						.section-faq__block-content
+							p.section-faq__block-text В штате ресторана предусмотрен менеджер по подбору персонала. С этой должности начинается поиск сотрудников. Мы поможем провести собеседование с ключевыми сотрудниками ресторана - директором, менеджерами, шеф-поваром, менеджерами доставки. Мы также поможем оценить их профессиональные знания и навыки и дадим вам обратную связь. Ваша задача оценить, готовы ли вы взять этих людей в свою команду. Директор ресторана и шеф будут собирать свою команду, а мы будем помогать.
+					// Block
+					.section-faq__block
+						.section-faq__block-title-box
+							h4.section-faq__block-title Как проходит обучение сотрудников?
+							+svg("chevron-right")(class="section-faq__block-icon")
+						.section-faq__block-content
+							p.section-faq__block-text Обучение проходит в три этапа. Сначала каждому сотруднику назначаются курсы в онлайн, в зависимости от его должности. Курсы доступны в специальном приложении на мобильном телефоне или с любого устройства, имеющего доступ в Интернет.
+							p.section-faq__block-text На втором этапе мы организовываем стажировку сотрудников. Директор ресторана, менеджеры, шеф-повар, менеджеры доставки проходят обучение в действующих ресторанах. Все остальные сотрудники проходят стажировку в своем ресторане до его открытия. Стажировку проводят опытные специалисты компании. 
+							p.section-faq__block-text На третьем этапе сотрудник сдает аттестацию. Только аттестованные сотрудники имеют право работать в ресторане. Обучение для всех сотрудников бесплатное, доступ к учебным материалам предоставляется каждому сотруднику пока он работает в ресторане.
+					// Block
+					.section-faq__block
+						.section-faq__block-title-box
+							h4.section-faq__block-title Вы помогаете с рекламой и продвижением?
+							+svg("chevron-right")(class="section-faq__block-icon")
+						.section-faq__block-content
+							p.section-faq__block-text Как только вы заключите договор аренды мы начнем составлять программу продвижения ресторана. Пока идет стройка наши маркетологи собирают базу гостей и подогревают их интерес. Программа продвижения включает период до открытия ресторана, так и несколько месяцев после открытия. Далее ресторан попадает в регулярные маркетинговые мероприятия.
+			// Col
+			.section-faq__col
+				.section-faq__panel
+					p.section-faq__panel-text Остались вопросы? Напишите нам, мы с радостью на них ответим
+					a.button.button--black.button--small.section-faq__panel-btn(href="https://t.me/s/tanukifamily", target="blank", rel="noreferrer nofollow") Задать вопрос в чате
+
+	// Section Subscribe
+	section.section-subscribe.container
+		.section-subscribe__panel
+			.section-subscribe__content
+				h2.heading2.section-subscribe__title Подписывайтесь на наш телеграм
+				p.section-subscribe__text На канале "Франшиза ТАНУКИ" мы рассказываем о нашем бизнесе и делимся полезными лайфхаками
+				a.button.button--big.button--blue.section-subscribe__btn(href="https://t.me/s/tanukifamily", target="blank", rel="noreferrer nofollow")
+					+svg("telegram-logo")(class="button__icon")
+					|Подписаться
+
+	// Fixed contacts
+	.fixed-contacts
+		a.fixed-contacts__link.fixed-contacts__link--green(href="#")
+			+svg("call")(class="fixed-contacts__link-icon")
+		a.fixed-contacts__link.fixed-contacts__link--blue(href="#")
+			+svg("message")(class="fixed-contacts__link-icon")
+
+	// Modal
+	.modal.modal--success
+		.modal__window
+			button.modal__close-btn.modal__close(aria-label="Закрыть")
+				+svg("close")(class="modal__close-btn-icon")
+			h2.modal__title Спасибо за заявку!
+				br
+				|Мы с вами скоро свяжемся
+			p.modal__text А пока подпишитесь на наш телеграмм канал
+			a.button.button--big.button--blue.modal__btn.modal__close(href="https://t.me/s/tanukifamily", target="blank", rel="noreferrer nofollow")
+				+svg("telegram-logo")(class="button__icon")
+				| Подписаться

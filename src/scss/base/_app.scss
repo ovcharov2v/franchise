@@ -1,0 +1,39 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	padding-top: 103px;
+	overflow-x: hidden;
+	background-color: $color-bg;
+	-webkit-font-smoothing: antialiased;
+}
+
+.main {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+}
+
+button {
+	cursor: pointer;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+	display: none;
+	-webkit-appearance: none;
+}

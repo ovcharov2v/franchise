@@ -1,0 +1,44 @@
+.fixed-contacts {
+	position: fixed;
+	right: 32px;
+	bottom: 32px;
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		transition: background-color $transition-default, color $transition-default;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
+		&--green {
+			background-color: #1FD066;
+			box-shadow: 0 4px 10px rgba(#1B3927, .3);
+			color: $color-white;
+
+			&:hover {
+				background-color: darken(#1FD066, 7%);
+			}
+		}
+
+		&--blue {
+			background-color: #62B4FF;
+			box-shadow: 0 4px 10px rgba(#2D3C4B, .24);
+			color: $color-white;
+
+			&:hover {
+				background-color: darken(#62B4FF, 7%);
+			}
+		}
+	}
+
+	&__link-icon {
+		width: 32px;
+		height: 32px;
+	}
+}

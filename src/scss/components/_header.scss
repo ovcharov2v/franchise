@@ -1,0 +1,49 @@
+.header {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: $color-white;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		padding-top: 24px;
+		padding-bottom: 24px;
+	}
+
+	&__logo {
+		display: block;
+		width: 100%;
+		max-width: 333px;
+	}
+
+	&__nav {
+		margin-left: auto;
+	}
+
+	&__nav-list {
+		display: flex;
+		margin: 0 -12px;
+	}
+
+	&__nav-elem {
+		padding: 0 12px;
+	}
+
+	&__nav-link {
+		font-size: 18px;
+		line-height: 1.4;
+		font-weight: 500;
+		transition: color $transition-default;
+
+		&:hover {
+			color: $color-red;
+		}
+	}
+
+	&__btn {
+		margin-left: 32px;
+	}
+}

@@ -1,0 +1,94 @@
+.section-steps {
+	padding-top: 80px;
+	padding-bottom: 100px;
+	background: $section-gradient;
+
+	&__title {
+		margin-bottom: 48px;
+	}
+
+	&__slider-box {
+		position: relative;
+		margin-bottom: 64px;
+	}
+
+	&__slider-nav {
+		position: absolute;
+		z-index: 5;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		pointer-events: none;
+	}
+
+	&__slider-btn {
+		pointer-events: all;
+
+		&--prev {
+			transform: translateX(-50%);
+		}
+
+		&--next {
+			transform: translateX(50%);
+		}
+	}
+
+	&__slider {
+	}
+
+	&__slider-nav {
+		position: absolute;
+		z-index: 5;
+		top: 257px;
+		left: 0;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		pointer-events: none;
+	}
+
+	&__slider-btn {
+		pointer-events: all;
+
+		&--prev {
+			transform: translateX(-50%);
+		}
+
+		&--next {
+			transform: translateX(50%);
+		}
+	}
+
+	&__card {
+		padding: 24px 16px;
+		background-color: $color-bg-card;
+		border-radius: 12px;
+		height: auto !important;
+		//min-height: 245px;
+	}
+
+	&__card-num {
+		display: block;
+		margin-bottom: 12px;
+		font-size: 18px;
+		line-height: 1.4;
+		font-weight: 500;
+		color: #B2ABAA;
+	}
+
+	&__card-title {
+		font-size: 20px;
+		line-height: 1.4;
+		font-weight: 700;
+		margin-bottom: 6px;
+	}
+
+	&__card-text {
+		font-size: 18px;
+		line-height: 1.4;
+		color: $color-text2;
+	}
+}
