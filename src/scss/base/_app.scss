@@ -9,10 +9,14 @@ body {
 	flex-direction: column;
 	width: 100%;
 	min-height: 100vh;
-	padding-top: 103px;
+	padding-top: 64px;
 	overflow-x: hidden;
 	background-color: $color-bg;
 	-webkit-font-smoothing: antialiased;
+
+	@include desktop-xl {
+		padding-top: 103px;
+	}
 }
 
 .main {

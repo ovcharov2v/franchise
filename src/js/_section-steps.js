@@ -14,7 +14,8 @@ if(section) {
 			}
 			if (!stepsSliderMobile) {
 				stepsSliderMobile = new Swiper('.section-steps__slider', {
-					slidesPerView: 3
+					slidesPerView: 'auto',
+					spaceBetween: 8,
 				})
 			}
 		} else {

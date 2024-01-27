@@ -1,21 +1,59 @@
 .section-order {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	overflow: hidden;
+
+	@include desktop {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
 
 	&__grid {
-		display: grid;
-		grid-template: auto / minmax(0, 1.47fr) minmax(0, 1fr);
-		grid-gap: 20px;
-		padding: 32px 44px 44px;
-		background-color: $color-bg-card;
-		border-radius: 12px;
+		position: relative;
+		z-index: 0;
+		padding: 16px 0;
+
+		&::before {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 50%;
+			width: 110vw;
+			height: 100%;
+			transform: translateX(-50%);
+			background-color: $color-bg-card;
+			content: "";
+		}
+
+		@include desktop {
+			display: grid;
+			grid-template: auto / minmax(0, 1.47fr) minmax(0, 1fr);
+			grid-gap: 20px;
+			padding: 32px 44px 44px;
+			background-color: $color-bg-card;
+			border-radius: 12px;
+
+			&::before {
+				content: none;
+			}
+		}
 	}
 
 	&__title {
-		font-size: 52px;
-		line-height: 60px;
+		margin-bottom: 24px;
+		font-size: 28px;
+		line-height: 32px;
 		font-weight: 700;
-		letter-spacing: -0.012em;
+
+		@include tablet {
+			margin-bottom: 0;
+		}
+
+		@include desktop {
+			font-size: 52px;
+			line-height: 60px;
+			letter-spacing: -0.012em;
+		}
 	}
 
 	&__form {
@@ -24,13 +62,28 @@
 
 	&__submit {
 		width: 100%;
-		margin-bottom: 32px;
+		margin-bottom: 8px;
+
+		@include tablet {
+			max-width: 300px;
+		}
+
+		@include desktop {
+			max-width: unset;
+			width: unset;
+			margin-bottom: 32px;
+		}
 	}
 
 	&__note {
+		max-width: 442px;
 		font-size: 12px;
 		line-height: 16px;
 		color: #B2ABAA;
-		text-align: center;
+
+		@include desktop {
+			text-align: center;
+			max-width: unset;
+		}
 	}
 }

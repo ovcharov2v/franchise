@@ -3,47 +3,169 @@
 	z-index: 999;
 	top: 0;
 	left: 0;
-	width: 100%;
+	right: 0;
 	background-color: $color-white;
+	transition: box-shadow $transition-default, border-radius $transition-default, top $transition-default, left $transition-default, right $transition-default;
+
+	&--menu-open {
+		top: 16px;
+		left: 16px;
+		right: 16px;
+		border-radius: 8px 8px 0 0;
+		box-shadow: 0 0 0 500vw rgba($color-black, .5);
+	}
 
 	&__container {
+		position: relative;
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		padding-top: 24px;
 		padding-bottom: 24px;
+		transition: padding $transition-default;
+
+		@include desktop-xl {
+			justify-content: flex-start;
+		}
+
+		.header--menu-open & {
+			padding-top: 16px;
+			padding-bottom: 16px;
+		}
 	}
 
 	&__logo {
+		flex-shrink: 0;
 		display: block;
 		width: 100%;
-		max-width: 333px;
+		max-width: 277px;
+
+		@include desktop-xl {
+			max-width: 333px;
+		}
 	}
 
-	&__nav {
-		margin-left: auto;
+	&__nav-box {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background-color: $color-white;
+		padding: 14px 16px 40px;
+		border-radius: 0 0 8px 8px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		transform-origin: top center;
+		transform: scaleY(0);
+		transition: transform $transition-default;
+
+		.header--menu-open & {
+			transform: scaleY(1);
+		}
+
+		@include desktop-xl {
+			display: inline-flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-end;
+			position: static;
+			background: none;
+			margin-left: auto;
+			padding: 0;
+			transform: none;
+		}
 	}
 
 	&__nav-list {
 		display: flex;
-		margin: 0 -12px;
+		flex-direction: column;
+		justify-content: flex-start;
+		margin-bottom: 16px;
+
+		@include desktop-xl {
+			flex-direction: row;
+			margin: 0 -12px;
+		}
 	}
 
 	&__nav-elem {
-		padding: 0 12px;
+		margin-bottom: 16px;
+
+		@include desktop-xl {
+			margin-bottom: 0;
+			padding: 0 12px;
+		}
 	}
 
 	&__nav-link {
 		font-size: 18px;
-		line-height: 1.4;
-		font-weight: 500;
+		font-weight: 700;
+		line-height: 24px;
 		transition: color $transition-default;
 
 		&:hover {
 			color: $color-red;
 		}
+
+		@include desktop-xl {
+			font-size: 18px;
+			line-height: 1.4;
+			font-weight: 500;
+		}
 	}
 
 	&__btn {
-		margin-left: 32px;
+		@include desktop-xl {
+			margin-left: 32px;
+		}
+	}
+
+	&__menu-btn {
+		flex-shrink: 0;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 32px;
+		height: 32px;
+		border: none;
+		background: none;
+		transition: color $transition-default;
+
+		&:hover {
+			color: $color-red;
+		}
+
+		@include desktop-xl {
+			display: none;
+		}
+	}
+
+	&__menu-btn-icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 24px;
+		height: 24px;
+		transition: opacity $transition-default;
+
+		&--menu {
+			color: $color-black;
+
+			.header--menu-open & {
+				opacity: 0;
+			}
+		}
+
+		&--close {
+			opacity: 0;
+			color: #B2ABAA;
+
+			.header--menu-open & {
+				opacity: 1;
+			}
+		}
 	}
 }

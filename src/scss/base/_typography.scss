@@ -10,14 +10,10 @@ input, button, textarea {
 }
 
 .heading1 {
-	font-size: 30px;
-	line-height: 32px;
+	font-size: 32px;
 	font-weight: 700;
-
-	@include tablet {
-		font-size: 40px;
-		line-height: 44px;
-	}
+	line-height: 36px;
+	letter-spacing: -0.064px;
 
 	@include desktop {
 		font-size: 60px;
@@ -27,31 +23,21 @@ input, button, textarea {
 }
 
 .heading2 {
-	font-size: 28px;
-	line-height: 32px;
+	font-size: 24px;
+	line-height: 29px;
 	font-weight: 700;
-	letter-spacing: -0.005em;
-
-	@include tablet {
-		font-size: 36px;
-		line-height: 44px;
-	}
 
 	@include desktop {
 		font-size: 44px;
 		line-height: 1.1;
+		letter-spacing: -0.005em;
 	}
 }
 
 .heading3 {
-	font-size: 24px;
-	line-height: 28px;
+	font-size: 20px;
+	line-height: 24px;
 	font-weight: 700;
-
-	@include tablet {
-		font-size: 28px;
-		line-height: 32px;
-	}
 
 	@include desktop {
 		font-size: 32px;
@@ -59,17 +45,7 @@ input, button, textarea {
 	}
 }
 .heading4 {
-	font-size: 24px;
-	line-height: 28px;
+	font-size: 20px;
+	line-height: 1.14;
 	font-weight: 700;
-
-	@include tablet {
-		font-size: 28px;
-		line-height: 32px;
-	}
-
-	@include desktop {
-		font-size: 20px;
-		line-height: 1.14;
-	}
 }

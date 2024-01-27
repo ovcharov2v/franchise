@@ -4,7 +4,7 @@
 	margin-bottom: 24px;
 
 	@include tablet {
-		margin-bottom: 40px;
+		margin-bottom: 30px;
 	}
 
 	@include desktop {
@@ -43,37 +43,11 @@
 		pointer-events: none;
 		transition: top $transition-default, transform $transition-default;
 
-		.form-group__input--select + & {
-			top: 12px;
-		}
-
 		input.form-group__input:not(:placeholder-shown) + &,
 		input.form-group__input:focus + &,
 		.form-group--filled & {
 			top: 0;
 			transform: scale(.75);
 		}
-	}
-
-	&__range-top {
-		display: flex;
-		justify-content: space-between;
-		margin-bottom: 9px;
-	}
-
-	&__range-top-text {
-		font-size: 16px;
-		line-height: 20px;
-		color: rgba($color-black, .64);
-	}
-
-	&__range-top-counter {
-		padding: 0;
-		border: none;
-		font-size: 18px;
-		line-height: 24px;
-		font-weight: 700;
-		text-align: right;
-		pointer-events: none;
 	}
 }

@@ -12,15 +12,25 @@
 	transition: background-color $transition-default;
 
 	&--big {
-		padding: 16px 24px;
-		font-size: 18px;
-		line-height: 23px;
+		padding: 12px 24px;
+		font-size: 16px;
+		line-height: 20px;
+
+		@include desktop-xl {
+			padding: 16px 24px;
+			font-size: 18px;
+			line-height: 23px;
+		}
 	}
 
 	&--medium {
-		padding: 16px 24px;
+		padding: 12px 18px;
 		font-size: 16px;
 		line-height: 20px;
+
+		@include desktop {
+			padding: 16px 24px;
+		}
 	}
 
 	&--small {
@@ -47,6 +57,7 @@
 		&:hover {
 			background-color: #474545;
 		}
+
 		&:active {
 			background-color: #7A7676;
 		}

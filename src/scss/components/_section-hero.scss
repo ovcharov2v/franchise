@@ -1,5 +1,9 @@
 .section-hero {
-	padding-bottom: 40px;
+	padding-bottom: 16px;
+
+	@include desktop {
+		padding-bottom: 40px;
+	}
 
 	&__content {
 		@include background-image("../images/section-hero/bg", "jpg");
@@ -9,22 +13,25 @@
 		padding: 24px 16px 16px;
 		border-radius: 12px;
 
+
 		@include desktop {
 			padding: 80px 60px 24px;
 		}
 	}
 
 	&__title {
-		max-width: 870px;
+		max-width: 500px;
 		margin-bottom: 24px;
 
 		@include desktop {
+			max-width: 870px;
 			margin-bottom: 32px;
 		}
 	}
 
-	&__title-inderline {
+	&__title-underline {
 		position: relative;
+		white-space: nowrap;
 
 		&::after {
 			position: absolute;
@@ -41,12 +48,13 @@
 	}
 
 	&__text {
-		max-width: 620px;
+		max-width: 440px;
 		margin-bottom: 40px;
 		font-size: 16px;
 		line-height: 22px;
 
 		@include desktop {
+			max-width: 620px;
 			margin-bottom: 80px;
 			font-size: 20px;
 			line-height: 24px;

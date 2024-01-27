@@ -2,16 +2,20 @@ mixin header()
 	header.header
 		.container.header__container
 			+picture("logo", "png", "TANUKI Family Франшиза")(class="header__logo")
-			nav.header__nav
-				ul.header__nav-list
-					li.header__nav-elem
-						a.header__nav-link(href="#section-why" data-scroll-to="section-why") Почему Тануки
-					li.header__nav-elem
-						a.header__nav-link(href="#section-target" data-scroll-to="section-target") Для кого
-					li.header__nav-elem
-						a.header__nav-link(href="#section-cities" data-scroll-to="section-cities") Города
-					li.header__nav-elem
-						a.header__nav-link(href="#section-conditions" data-scroll-to="section-conditions") Условия
-					li.header__nav-elem
-						a.header__nav-link(href="#section-faq" data-scroll-to="section-faq") Вопросы и ответы
-			button.button.button--red.button--big.header__btn(data-scroll-to="section-order") Оставить заявку
+			.header__nav-box
+				nav.header__nav
+					ul.header__nav-list
+						li.header__nav-elem
+							a.header__nav-link(href="#section-why" data-scroll-to="section-why") Почему Тануки
+						li.header__nav-elem
+							a.header__nav-link(href="#section-target" data-scroll-to="section-target") Для кого
+						li.header__nav-elem
+							a.header__nav-link(href="#section-cities" data-scroll-to="section-cities") Города
+						li.header__nav-elem
+							a.header__nav-link(href="#section-conditions" data-scroll-to="section-conditions") Условия
+						li.header__nav-elem
+							a.header__nav-link(href="#section-faq" data-scroll-to="section-faq") Вопросы и ответы
+				button.button.button--red.button--big.header__btn(data-scroll-to="section-order") Оставить заявку
+			button.header__menu-btn(aria-label="Меню")
+				+svg("menu")(class="header__menu-btn-icon header__menu-btn-icon--menu")
+				+svg("menu-close")(class="header__menu-btn-icon header__menu-btn-icon--close")

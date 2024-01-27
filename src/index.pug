@@ -11,10 +11,10 @@ block content
 	// Section Hero
 	section.section-hero.container
 		.section-hero__content
-			h1.heading1.section-hero__title Откройте ресторан и зарабатывайте от
+			h1.heading1.section-hero__title Откройте ресторан и зарабатывайте от
 				|
 				|
-				span.section-hero__title-inderline 2 500 000
+				span.section-hero__title-underline 2 500 000
 				|
 				|
 				|₽
@@ -60,13 +60,19 @@ block content
 					a.section-why__card-link(href="#", target="_blank", rel="noreferrer nofollow") Программе взаимности
 
 	// Section Photo
-	section.section-photo.container
-		h2.section-photo__title.heading2 Наши рестораны
-		.section-photo__grid
-			+picture("section-photo/img1")(class="section-photo__elem")
-			+picture("section-photo/img2")(class="section-photo__elem")
-			+picture("section-photo/img3")(class="section-photo__elem")
-			+picture("section-photo/img4")(class="section-photo__elem")
+	section.section-photo
+		.container
+			h2.section-photo__title.heading2 Наши рестораны
+			.section-photo__slider.swiper
+				.section-photo__grid.swiper-wrapper
+					.section-photo__elem.swiper-slide
+						+picture("section-photo/img1")(class="section-photo__img")
+					.section-photo__elem.swiper-slide
+						+picture("section-photo/img2")(class="section-photo__img")
+					.section-photo__elem.swiper-slide
+						+picture("section-photo/img3")(class="section-photo__img")
+					.section-photo__elem.swiper-slide
+						+picture("section-photo/img4")(class="section-photo__img")
 
 
 	// Section Advantages
@@ -128,8 +134,9 @@ block content
 				button.section-process__slider-btn.section-process__slider-btn--next.slider-btn.slider-btn--next
 					+svg("chevron-right")(class="slider-btn__icon")
 			.swiper.section-process__slider
-				.swiper-wrapper
-					.swiper-slide.swiper
+				.swiper-wrapper.section-process__slider-wrapper
+					p.section-process__slider-title До открытия ресторана
+					.swiper-slide.swiper.section-process__subslider.section-process__subslider--top
 						.swiper-wrapper.section-process__grid
 							+process-card("1", "Оценка рынка", "Оценим емкость рынка вашего города.Определим возможные выручки, потенциал доставки и составим программу развития.")
 							+process-card("2", "Выбор локации", "Совместно выберем подходящую локацию. Составим финансовую модель будущего ресторана. Оценим инвестиции. Проверим договор аренды.")
@@ -139,7 +146,8 @@ block content
 							+process-card("6", "Поиск персонала", "Подскажем как найти персонал и провести собеседования. Оценим кандидатов на ключевые позиции.")
 							+process-card("7", "Обучение", "Каждый сотрудник пройдет обучение и сдаст аттестацию. Обучение в онлайн и оффлайн формате.")
 							+process-card("8", "Реклама на открытие", "Сразу после подписания договора аренды начнем привлекать гостей в ваш ресторан. Составим программу открытия ресторана.")
-					.swiper-slide.swiper
+					p.section-process__slider-title После открытия ресторана
+					.swiper-slide.swiper.section-process__subslider.section-process__subslider--bottom
 						.swiper-wrapper.section-process__grid
 							+process-card("1", "Контроль", "Регулярные аудиты и тайный покупатель подскажут, где происходит сбой в работе ресторана.")
 							+process-card("2", "Поддержка", "Наши операционные менеджеры помогут отладить работу ресторана и подскажут вашей команде, что нужно делать.")
@@ -175,36 +183,39 @@ block content
 	section.section-map.container
 		h2.section-map__title.heading2 Карта действующих ресторанов
 		.section-map__map-box
-			+picture("section-map/map")(class="section-map__map")
+			+picture("section-map/map")(class="section-map__map section-map__map--desktop")
+			+picture("section-map/map-tablet")(class="section-map__map section-map__map--tablet")
+			+picture("section-map/map-mobile")(class="section-map__map section-map__map--mobile")
 
 	// Section Cities
 	section#section-cities.section-cities.container
 		h2.section-cities__title.heading2 Мы ищем франчайзи в городах
-		.section-cities__grid
-			// Card
-			article.section-cities__card
-				+picture("section-cities/img1")(class="section-cities__card-img")
-				h3.section-cities__card-title Города-миллионеры
-					br
-					|России
-				p.section-cities__card-text В крупных городах мы готовы открывать 2-3 ресторана.
-				p.section-cities__card-list Красноярск, Новосибирск, Тюмень, Омск,  Челябинск, Пермь, Ростов-на-Дону, Волгоград.
-				button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Забронировать город
-			// Card
-			article.section-cities__card
-				+picture("section-cities/img2")(class="section-cities__card-img")
-				h3.section-cities__card-title Города с населением от 500 000 человек
-				p.section-cities__card-text В этих городах мы готовы открывать 1-2 ресторана. Один город - один франчайзи.
-				p.section-cities__card-list Саратов, Тюмень, Ижевск, Хабаровск, Иркутск, Владивосток, Ярославль, Оренбург, Кемерово и другие.
-				button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Забронировать город
-			// Card
-			article.section-cities__card
-				+picture("section-cities/img3")(class="section-cities__card-img")
-				h3.section-cities__card-title Предложите свой город
-				p.section-cities__card-text Не нашли свой город?
-					br
-					|Мы готовы открывать рестораны и в других городах, если это позволяют экономические факторы.
-				button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Предложить свой город
+		.section-cities__slider.swiper
+			.swiper-wrapper.section-cities__grid
+				// Card
+				article.section-cities__card.swiper-slide
+					+picture("section-cities/img1")(class="section-cities__card-img")
+					h3.section-cities__card-title Города-миллионеры
+						br
+						|России
+					p.section-cities__card-text В крупных городах мы готовы открывать 2-3 ресторана.
+					p.section-cities__card-list Красноярск, Новосибирск, Тюмень, Омск,  Челябинск, Пермь, Ростов-на-Дону, Волгоград.
+					button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Забронировать город
+				// Card
+				article.section-cities__card.swiper-slide
+					+picture("section-cities/img2")(class="section-cities__card-img")
+					h3.section-cities__card-title Города с населением от 500 000 человек
+					p.section-cities__card-text В этих городах мы готовы открывать 1-2 ресторана. Один город - один франчайзи.
+					p.section-cities__card-list Саратов, Тюмень, Ижевск, Хабаровск, Иркутск, Владивосток, Ярославль, Оренбург, Кемерово и другие.
+					button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Забронировать город
+				// Card
+				article.section-cities__card.swiper-slide
+					+picture("section-cities/img3")(class="section-cities__card-img")
+					h3.section-cities__card-title Предложите свой город
+					p.section-cities__card-text Не нашли свой город?
+						br
+						|Мы готовы открывать рестораны и в других городах, если это позволяют экономические факторы.
+					button.button.button--black.button--medium.section-cities__card-btn(data-scroll-to="section-order") Предложить свой город
 
 
 	// Section Steps
@@ -241,11 +252,15 @@ block content
 
 	// Section Conditions
 	section#section-conditions.section-conditions.container
+		.section-conditions__mobile-header
+			h2.section-conditions__title.heading2 Условия сотрудничества
+			p.section-conditions__text Покупка франшизы — это возможность начать бизнес не имея опыта в выбранном направлении и с минимальным риском допустить ошибки.
 		.section-conditions__grid
 			// Col
 			.section-conditions__col
-				h2.section-conditions__title.heading2 Условия сотрудничества
-				p.section-conditions__text Покупка франшизы — это возможность начать бизнес не имея опыта в выбранном направлении и с минимальным риском допустить ошибки.
+				.section-conditions__desktop-header
+					h2.section-conditions__title.heading2 Условия сотрудничества
+					p.section-conditions__text Покупка франшизы — это возможность начать бизнес не имея опыта в выбранном направлении и с минимальным риском допустить ошибки.
 				.section-conditions__card-grid
 					// Card
 					.section-conditions__card
@@ -283,36 +298,38 @@ block content
 					|
 					|Входит в инвестиции
 			// Col
-			.section-conditions__col
-				.section-conditions__panel-grid
+			.section-conditions__col.swiper.section-conditions__slider
+				.section-conditions__panel-grid.swiper-wrapper
 					// Panel
-					.section-conditions__panel.section-conditions__panel--violet
-						h3.section-conditions__panel-title Классический франчайзинг
-						p.section-conditions__panel-text
-							strong.section-conditions__panel-text-strong Вы
-							|
-							|
-							|— самостоятельно управляете своим рестораном, ориентируюсь на наши стандарты.
-						p.section-conditions__panel-text
-							strong.section-conditions__panel-text-strong Мы
-							|
-							|
-							|— помогаем вам на всех этапах открытия. Обучаем вас и ваших сотрудников. После открытия контролируем основные показатели работы ресторана. Подсказываем вам, где проблема и как её исправить.
+					.section-conditions__panel.section-conditions__panel--violet.swiper-slide
+						.section-conditions__panel-content
+							h3.section-conditions__panel-title Классический франчайзинг
+							p.section-conditions__panel-text
+								strong.section-conditions__panel-text-strong Вы
+								|
+								|
+								|— самостоятельно управляете своим рестораном, ориентируюсь на наши стандарты.
+							p.section-conditions__panel-text
+								strong.section-conditions__panel-text-strong Мы
+								|
+								|
+								|— помогаем вам на всех этапах открытия. Обучаем вас и ваших сотрудников. После открытия контролируем основные показатели работы ресторана. Подсказываем вам, где проблема и как её исправить.
 						button.button.button--red.button--small.section-conditions__panel-btn(data-scroll-to="section-order") Оставить заявку
 					// Panel
-					.section-conditions__panel.section-conditions__panel--beige
-						h3.section-conditions__panel-title Управленческая франшиза
-						p.section-conditions__panel-text
-							strong.section-conditions__panel-text-strong Вы
-							|
-							|
-							|— получаете полным отчет о деятельности ресторана и контролируете финансовые потоки.
-						p.section-conditions__panel-text
-							strong.section-conditions__panel-text-strong Мы
-							|
-							|
-							|— берем дополнительную плату за управление рестораном в размере 2% от выручки.
-						p.section-conditions__panel-note В отличие от классической франшизы рестораном управляет специально собранная команда опытных менеджеров под нашим руководством.
+					.section-conditions__panel.section-conditions__panel--beige.swiper-slide
+						.section-conditions__panel-content
+							h3.section-conditions__panel-title Управленческая франшиза
+							p.section-conditions__panel-text
+								strong.section-conditions__panel-text-strong Вы
+								|
+								|
+								|— получаете полным отчет о деятельности ресторана и контролируете финансовые потоки.
+							p.section-conditions__panel-text
+								strong.section-conditions__panel-text-strong Мы
+								|
+								|
+								|— берем дополнительную плату за управление рестораном в размере 2% от выручки.
+							p.section-conditions__panel-note В отличие от классической франшизы рестораном управляет специально собранная команда опытных менеджеров под нашим руководством.
 						button.button.button--red.button--small.section-conditions__panel-btn(data-scroll-to="section-order") Оставить заявку
 
 	// Section Structure
@@ -337,41 +354,46 @@ block content
 								['Резерв', '4,6%', '23'],
 								['Прочие расходы', '4,6%', '23'],
 								['Расходы на открытие', '3,1%', '19'],
-								['Проект ресторана', '2,3%', '16'],
-								['Маркетинг', '1,9%', '14'],
-								['Аренда и депозит', '1,8%', '13'],
+								['Проект ресторана', '2,3%', '16', true],
+								['Маркетинг', '1,9%', '14', true],
+								['Аренда и депозит', '1,8%', '13', true],
 							]
 						each el in info
 							// Elem
 							li.section-structure__info-elem
 								p.section-structure__info-elem-label= el[0]
 								.section-structure__info-elem-value-box
-									span.section-structure__info-elem-value(style=`width: ${el[2]}%`)= el[1]
+									if !el[3]
+										span.section-structure__info-elem-value(style=`width: ${el[2]}%`)= el[1]
+									if el[3]
+										span.section-structure__info-elem-value.section-structure__info-elem-value--with-mobile(style=`width: ${el[2]}%`)= el[1]
+										span.section-structure__info-elem-value-mobile= el[1]
 			// Col
 			.section-structure__col
 				.section-structure__col-title-box
 					h3.section-structure__col-title Что может снизить стоимость проекта:
-				.section-structure__card-grid
-					// Card
-					article.section-structure__card
-						p.section-structure__card-num 1
-						h4.section-structure__card-title Состояние помещения
-						p.section-structure__card-text Помещение требующее меньше переделок, отделки фасада, организации дополнительного входа.
-					// Card
-					article.section-structure__card
-						p.section-structure__card-num 2
-						h4.section-structure__card-title Достаточное количество электрической мощности
-						p.section-structure__card-text Сэкономите на подведение недостающей мощности.
-					// Card
-					article.section-structure__card
-						p.section-structure__card-num 3
-						h4.section-structure__card-title Наличие вентиляции
-						p.section-structure__card-text Действующая вентиляция потребует ревизии и оценки и скорее всего переделки. Но также может снизить затраты.
-					// Card
-					article.section-structure__card
-						p.section-structure__card-num 4
-						h4.section-structure__card-title Арендные каникулы
-						p.section-structure__card-text Если на этапе переговоров с Арендодателем добиться каникул на весь срок ремонта помещения (3-4 мес), то не придется платить аренду на этапе строительства
+				.section-structure__slider.swiper
+					.section-structure__card-grid.swiper-wrapper
+						// Card
+						article.section-structure__card.swiper-slide
+							p.section-structure__card-num 1
+							h4.section-structure__card-title Состояние помещения
+							p.section-structure__card-text Помещение требующее меньше переделок, отделки фасада, организации дополнительного входа.
+						// Card
+						article.section-structure__card.swiper-slide
+							p.section-structure__card-num 2
+							h4.section-structure__card-title Достаточное количество электрической мощности
+							p.section-structure__card-text Сэкономите на подведение недостающей мощности.
+						// Card
+						article.section-structure__card.swiper-slide
+							p.section-structure__card-num 3
+							h4.section-structure__card-title Наличие вентиляции
+							p.section-structure__card-text Действующая вентиляция потребует ревизии и оценки и скорее всего переделки. Но также может снизить затраты.
+						// Card
+						article.section-structure__card.swiper-slide
+							p.section-structure__card-num 4
+							h4.section-structure__card-title Арендные каникулы
+							p.section-structure__card-text Если на этапе переговоров с Арендодателем добиться каникул на весь срок ремонта помещения (3-4 мес), то не придется платить аренду на этапе строительства
 		// Bottom
 		.section-structure__bottom
 			h3.section-structure__bottom-title Чтобы узнать, как еще можно снизить стоимость проекта, скачайте требования к помещению

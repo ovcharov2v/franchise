@@ -1,15 +1,26 @@
 .section-faq {
-	padding-top: 50px;
-	padding-bottom: 40px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+
+	@include desktop {
+		padding-top: 50px;
+		padding-bottom: 40px;
+	}
 
 	&__title {
-		margin-bottom: 8px;
+		@include desktop {
+			margin-bottom: 8px;
+		}
 	}
 
 	&__grid {
 		display: grid;
-		grid-template: auto / minmax(0, 1.35fr) minmax(0, 1fr);
 		grid-gap: 16px;
+
+		@include desktop {
+			grid-template: auto / minmax(0, 1.35fr) minmax(0, 1fr);
+			grid-gap: 16px;
+		}
 	}
 
 	&__col {
@@ -24,16 +35,26 @@
 
 	&__block-title-box {
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
 		padding: 24px 0;
 		cursor: pointer;
+
+		@include desktop {
+			align-items: center;
+		}
 	}
 
 	&__block-title {
-		font-size: 24px;
+		max-width: 310px;
+		font-size: 20px;
 		font-weight: 700;
-		line-height: 28px;
+		line-height: 24px;
+
+		@include desktop {
+			max-width: unset;
+			font-size: 24px;
+			line-height: 28px;
+		}
 	}
 
 	&__block-icon {
@@ -59,28 +80,47 @@
 	}
 
 	&__block-text {
-		font-size: 18px;
+		font-size: 16px;
 		font-weight: 500;
-		line-height: 24px;
+		line-height: 23px;
 		color: rgba(#000, .64);
 
 		&:not(:last-child) {
-			margin-bottom: 24px;
+			margin-bottom: 32px;
 		}
 
 		&:last-child {
 			margin-bottom: 16px;
 		}
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 24px;
+
+			&:not(:last-child) {
+				margin-bottom: 24px;
+			}
+
+			&:last-child {
+				margin-bottom: 16px;
+			}
+		}
 	}
 
 	&__panel {
 		width: 100%;
-		max-width: 324px;
-		margin-top: 46px;
-		margin-left: auto;
-		padding: 24px;
+		padding: 16px;
 		background-color: $color-bg-card;
 		border-radius: 16px;
+		text-align: center;
+
+		@include desktop {
+			max-width: 324px;
+			margin-top: 46px;
+			margin-left: auto;
+			padding: 24px;
+			text-align: unset;
+		}
 	}
 
 	&__panel-text {
@@ -92,5 +132,10 @@
 
 	&__panel-btn {
 		width: 100%;
+		max-width: 300px;
+
+		@include desktop {
+			max-width: unset;
+		}
 	}
 }

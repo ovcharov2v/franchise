@@ -1,38 +1,69 @@
 .section-why {
-	padding-top: 40px;
-	padding-bottom: 50px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+
+	@include desktop {
+		padding-top: 40px;
+		padding-bottom: 50px;
+	}
 
 	&__header {
 		max-width: 688px;
-		margin-bottom: 65px;
+		margin-bottom: 24px;
+
+		@include desktop {
+			margin-bottom: 65px;
+		}
 	}
 
 	&__title {
-		margin-bottom: 24px;
+		margin-bottom: 12px;
+		@include desktop {
+			margin-bottom: 24px;
+		}
 	}
 
 	&__text {
 		margin-bottom: 5px;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 23px;
 		color: $color-text2;
+
+		@include desktop {
+			font-size: 18px;
+		}
 	}
 
 	&__note {
-		font-size: 12px;
+		font-size: 13px;
 		color: rgba($color-text2, .44);
+
+		@include desktop {
+			font-size: 12px;
+		}
 	}
 
 	&__grid {
 		display: grid;
-		grid-template: auto / repeat(4, minmax(0, 1fr));
-		grid-gap: 16px;
+		grid-gap: 8px;
+
+		@include desktop {
+			grid-gap: 16px;
+			grid-template: auto / repeat(2, minmax(0, 1fr));
+		}
+
+		@include desktop-xl {
+			grid-template: auto / repeat(4, minmax(0, 1fr));
+		}
 	}
 
 	&__card {
-		padding: 24px;
+		padding: 16px;
 		background-color: $color-bg-card;
 		border-radius: 12px;
+
+		@include desktop {
+			padding: 24px;}
 	}
 
 	&__card-title {
@@ -40,9 +71,13 @@
 	}
 
 	&__card-text {
-		font-size: 18px;
-		line-height: 1.4;
+		font-size: 16px;
+		line-height: 22px;
 		color: $color-text2;
+
+		@include desktop {
+			font-size: 18px;
+			line-height: 1.4;}
 	}
 
 	&__card-link {

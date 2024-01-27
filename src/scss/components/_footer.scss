@@ -20,6 +20,10 @@
 		flex-direction: column-reverse;
 
 		@include tablet {
+			flex-direction: column;
+		}
+
+		@include desktop {
 			flex-direction: row;
 			justify-content: space-between;
 		}
@@ -37,8 +41,9 @@
 	&__nav {
 		display: flex;
 		flex-direction: column;
+		margin-bottom: 30px;
 
-		@include desktop-xl {
+		@include tablet {
 			flex-direction: row;
 			margin: 0 -12px;
 		}
@@ -47,7 +52,7 @@
 	&__nav-elem {
 		margin-bottom: 12px;
 
-		@include desktop-xl {
+		@include tablet {
 			margin: 0 12px;
 		}
 	}
@@ -65,7 +70,7 @@
 	&__phone-link {
 		display: inline-block;
 		margin-top: 16px;
-		margin-bottom: 9px;
+		margin-bottom: 24px;
 		font-size: 18px;
 		color: rgba($color-black, .4);
 		transition: color $transition-default;
@@ -83,7 +88,7 @@
 		color: rgba($color-black, .4);
 
 		&--mobile {
-			@include desktop {
+			@include tablet {
 				display: none;
 			}
 		}
@@ -91,8 +96,9 @@
 		&--desktop {
 			display: none;
 
-			@include desktop {
+			@include tablet {
 				display: block;
+				margin-bottom: 36px;
 			}
 		}
 	}

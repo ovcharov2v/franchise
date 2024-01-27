@@ -1,81 +1,169 @@
 .section-conditions {
-	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-top: 32px;
+	padding-bottom: 16px;
+	overflow: hidden;
+
+	@include desktop {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
 
 	&__grid {
-		display: grid;
-		grid-template: auto / repeat(2, minmax(0, 1fr));
-		grid-gap: 16px;
+		@include tablet {
+			display: grid;
+			grid-template: auto / minmax(0,1fr) minmax(0, 2.44fr);
+			grid-gap: 8px;
+		}
+
+		@include desktop {
+			grid-template: auto / repeat(2, minmax(0, 1fr));
+			grid-gap: 16px;
+		}
 	}
 
 	&__col {
 	}
 
+	&__desktop-header {
+		display: none;
+
+		@include desktop {
+			display: block;
+		}
+	}
+
+	&__mobile-header {
+		@include desktop {
+			display: none;
+		}
+	}
+
 	&__title {
-		margin-bottom: 24px;
+		margin-bottom: 12px;
+
+		@include desktop {
+			margin-bottom: 24px;
+		}
 	}
 
 	&__text {
-		max-width: 500px;
-		margin-bottom: 30px;
-		font-size: 18px;
+		max-width: 670px;
+		margin-bottom: 24px;
+		font-size: 16px;
 		line-height: 23px;
 		font-weight: 500;
 		color: $color-text2;
+
+		@include desktop {
+			max-width: 500px;
+			margin-bottom: 30px;
+			font-size: 18px;
+		}
 	}
 
 	&__card-grid {
 		display: grid;
-		grid-template: auto / repeat(2, minmax(0, 1fr));
-		grid-gap: 16px;
+		grid-gap: 8px;
 		margin-bottom: 12px;
+
+		@include desktop {
+			grid-template: auto / repeat(2, minmax(0, 1fr));
+			grid-gap: 16px;
+		}
 	}
 
 	&__card {
-		padding: 24px;
+		padding: 16px;
 		border-radius: 12px;
 		background-color: $color-bg-card;
+
+		@include desktop {
+			padding: 24px;
+		}
 	}
 
 	&__card-label {
 		margin-bottom: 4px;
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 1.4;
 		font-weight: 500;
 		color: $color-text2;
+
+		@include desktop {
+			font-size: 18px;
+		}
 	}
 
 	&__card-value {
-		font-size: 32px;
+		font-size: 20px;
 		font-weight: 700;
-		line-height: 1.14;
-		letter-spacing: -0.064px;
+		line-height: 24px;
+
+		@include desktop {
+			font-size: 32px;
+			line-height: 1.14;
+			letter-spacing: -0.064px;
+		}
 	}
 
 	&__card-value-small {
-		font-size: 22px;
-		font-weight: 700;
-		line-height: 1.14;
-		letter-spacing: -0.044px;
+		font-size: 16px;
+		line-height: 22px;
+
+		@include desktop {
+			font-size: 22px;
+			font-weight: 700;
+			line-height: 1.14;
+			letter-spacing: -0.044px;
+		}
 	}
 
 	&__note {
+		margin-bottom: 16px;
+		font-size: 16px;
+		line-height: 24px;
 		color: $color-text2;
+
+		@include tablet {
+			margin-bottom: 0;
+		}
+
+		@include desktop {
+			font-size: 18px;
+		}
+	}
+
+	&__slider {
+		overflow: visible;
 	}
 
 	&__panel-grid {
-		display: grid;
-		grid-template: auto / repeat(2, minmax(0, 1fr));
-		grid-gap: 16px;
-		height: 100%;
+		@include tablet {
+			display: grid;
+			grid-template: auto / repeat(2, minmax(0, 1fr));
+			grid-gap: 8px;
+			height: 100%;
+		}
+
+		@include desktop {
+			grid-gap: 16px;
+		}
 	}
 
 	&__panel {
 		display: flex;
 		flex-direction: column;
-		padding: 24px;
+		padding: 16px;
 		border-radius: 12px;
-		margin-bottom: 40px;
+		height: auto !important;
+
+		@include tablet {
+			margin-bottom: 38px;
+		}
+
+		@include desktop {
+			padding: 24px;
+		}
 
 		&--violet {
 			background-color: #E8EAFF;
@@ -87,18 +175,26 @@
 	}
 
 	&__panel-title {
-		margin-bottom: 32px;
+		margin-bottom: 16px;
 		font-size: 24px;
 		line-height: 1.14;
 		font-weight: 700;
+
+		@include desktop {
+			margin-bottom: 32px;
+		}
 	}
 
 	&__panel-text {
-		margin-bottom: 32px;
+		margin-bottom: 8px;
 		font-size: 16px;
 		line-height: 1.2;
 		font-weight: 500;
 		color: $color-text2;
+
+		@include tablet {
+			margin-bottom: 32px;
+		}
 	}
 
 	&__panel-text-strong {
@@ -116,5 +212,16 @@
 	&__panel-btn {
 		width: 100%;
 		margin-top: auto;
+
+		@include tablet {
+		}
+	}
+
+	&__panel-content {
+		margin-bottom: 50px;
+
+		@include tablet {
+			margin-bottom: 0;
+		}
 	}
 }
