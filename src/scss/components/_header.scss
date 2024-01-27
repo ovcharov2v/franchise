@@ -47,7 +47,7 @@
 
 	&__nav-box {
 		position: absolute;
-		top: 100%;
+		top: calc(100% - 1px);
 		left: 0;
 		width: 100%;
 		background-color: $color-white;

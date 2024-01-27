@@ -82,6 +82,10 @@
 		@include tablet {
 			font-size: 14px;
 		}
+
+		@include desktop {
+			margin-bottom: 9px;
+		}
 	}
 
 	&__copyright {
@@ -99,6 +103,10 @@
 			@include tablet {
 				display: block;
 				margin-bottom: 36px;
+			}
+
+			@include desktop {
+				margin-bottom: 0;
 			}
 		}
 	}

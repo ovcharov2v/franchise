@@ -27,6 +27,10 @@
 
 	&__slider {
 		overflow: visible;
+
+		@include desktop {
+			overflow: hidden;
+		}
 	}
 
 	&__slider-nav {

@@ -19,7 +19,7 @@ if(header) {
 	btn.addEventListener('click', () => closeMenu())
 }
 
-const closeMenu = () => {
+export const closeMenu = () => {
 	header.classList.remove('header--menu-open')
 	setBodyOverflow(false)
 }

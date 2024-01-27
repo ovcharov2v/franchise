@@ -8,6 +8,7 @@ import './_section-cities.js'
 import './_section-order.js'
 import './_section-faq.js'
 import './_modal.js'
+import {closeMenu} from "./_header";
 
 export function setBodyOverflow(setOverflow, addPaddingToElems = []) {
 	const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth
@@ -55,6 +56,7 @@ if (linkList.length) {
 			if (target) {
 				scrollToTarget(`#${target}`)
 			}
+			closeMenu()
 			return false
 		})
 	})

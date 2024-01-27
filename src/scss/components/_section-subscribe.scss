@@ -32,6 +32,10 @@
 			background-position: calc(100% - 62px) center;
 			background-repeat: no-repeat;
 			text-align: unset;
+
+			&::before {
+				content: none;
+			}
 		}
 	}
 

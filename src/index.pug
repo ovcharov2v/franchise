@@ -6,12 +6,14 @@ prepend vars
 append vars
 	- title = "TANUKI Family Франшиза"
 	- meta.description = "TANUKI Family Франшиза"
-
+append head-end
+	link(rel='preload', as='image', href='images/section-hero/bg@1x.webp')
+	link(rel='preload', as='image', href='images/section-hero/bg@2x.webp')
 block content
 	// Section Hero
 	section.section-hero.container
 		.section-hero__content
-			h1.heading1.section-hero__title Откройте ресторан и зарабатывайте от
+			h1.heading1.section-hero__title Откройте ресторан и зарабатывайте от
 				|
 				|
 				span.section-hero__title-underline 2 500 000
@@ -129,9 +131,9 @@ block content
 			button.section-process__nav-elem(data-slide="1") После открытия ресторана
 		.section-process__slider-box
 			.section-process__slider-nav
-				button.section-process__slider-btn.section-process__slider-btn--prev.slider-btn.slider-btn--prev
+				button.section-process__slider-btn.section-process__slider-btn--prev.slider-btn.slider-btn--prev(aria-label="Назад")
 					+svg("chevron-right")(class="slider-btn__icon")
-				button.section-process__slider-btn.section-process__slider-btn--next.slider-btn.slider-btn--next
+				button.section-process__slider-btn.section-process__slider-btn--next.slider-btn.slider-btn--next(aria-label="Вперед")
 					+svg("chevron-right")(class="slider-btn__icon")
 			.swiper.section-process__slider
 				.swiper-wrapper.section-process__slider-wrapper
@@ -230,9 +232,9 @@ block content
 			h2.section-steps__title.heading2 Как начать сотрудничество
 			.section-steps__slider-box
 				.section-steps__slider-nav
-					button.section-steps__slider-btn.section-steps__slider-btn--prev.slider-btn.slider-btn--prev
+					button.section-steps__slider-btn.section-steps__slider-btn--prev.slider-btn.slider-btn--prev(aria-label="Назад")
 						+svg("chevron-right")(class="slider-btn__icon")
-					button.section-steps__slider-btn.section-steps__slider-btn--next.slider-btn.slider-btn--next
+					button.section-steps__slider-btn.section-steps__slider-btn--next.slider-btn.slider-btn--next(aria-label="Вперед")
 						+svg("chevron-right")(class="slider-btn__icon")
 				.swiper.section-steps__slider
 					.swiper-wrapper
@@ -496,9 +498,9 @@ block content
 
 	// Fixed contacts
 	.fixed-contacts
-		a.fixed-contacts__link.fixed-contacts__link--green(href="#")
+		a.fixed-contacts__link.fixed-contacts__link--green(href="#", title="Позвонить")
 			+svg("call")(class="fixed-contacts__link-icon")
-		a.fixed-contacts__link.fixed-contacts__link--blue(href="#")
+		a.fixed-contacts__link.fixed-contacts__link--blue(href="#", title="Чат")
 			+svg("message")(class="fixed-contacts__link-icon")
 
 	// Modal
